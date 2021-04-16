@@ -1,0 +1,37 @@
+¿Qué retorna la función eof de pascal?
+     EOF(Fichero): devuelve TRUE si el puntero ha llegado al final del archivo. El otro tipo de archivos utilizables en pascal son los archivos con tipo o archivos binarios.
+     Normalmente no sabremos de antemano cuantas líneas de información hay en el fichero de texto. Por eso, necesitamos una estructura que nos permita analizar todo el fichero, de principio a fin. Esa estructura será “while not eof”. EOF es la abreviatura de End Of File, final de fichero, de modo que la orden anterior se podría traducir como “mientras no se acabe el fichero”.
+     Así, un programa similar al anterior pero que mostrara todo el contenido del fichero, tanto si contiene 2 líneas como si son 20 o sólo una, podría ser:
+
+Program FichT03;
+Var
+    Fichero: text;       (* Un fichero de texto *)
+    Línea: string;       (* La línea que leeremos *)
+Begin
+    Assign( fichero, ‘DATOS.TXT’ );  (* Le asignamos nombre *)
+    Reset( fichero );                (* Lo abrimos para leer datos *)
+    While not eof( fichero) do
+    Begin
+        readLn( fichero, línea );    (* Leemos una línea *)
+        writeLn( linea );            (* Y la mostramos *)
+    end;
+    close( fichero );                (* Finalmente cerramos *)
+end.
+
+>
+
+
+
+
+
+
+Ordene las siguientes líneas para permitir que se escriba la línea “hola mundo” en un Archivo, dejando de ultimo las 3 líneas que no pertenecen a la función.
+
+AssignFile(archivo, “archivo.txt”);
+Rewrite(archivo);
+Writeln(archivo.”hola mundo”);
+ Close(archivo);
+Reset(archivo);
+Eof(archivo);
+Writeln(archivo,”hola mundo”);
+
